@@ -164,3 +164,17 @@ nano /etc/vconsole.conf
 KEYMAP=ru
 FONT=cyr-sun16
 ```
+после задать имя компьютера в файле
+```bash
+nano /etc/hostname
+```
+добавление доменных имён компьютера
+```bash
+nano /etc/hosts
+```
+прописать туда:
+```bash
+127.0.0.1	localhost
+::			localhost
+127.0.0.1	<имя компьтера>.localdomain	<имя компьтера>
+```
