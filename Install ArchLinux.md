@@ -70,3 +70,60 @@ cfdisk /dev/sda
 записываем все созданные разделы
 
 проверяем созданные разделы `fdisk -l`
+
+## Форматирование разделов
+
+1) раздел пока не трогаем
+
+2) раздел форматирование в **FAT**
+
+```bash
+mkfs.vfat /dev/sda2
+```
+3) Если есть **swap** раздел
+```bash
+mkswap /dev/sda3
+```
+и подключение **swap**
+```bash
+swapon /dev/sda3
+```
+4 форматирование раздела с данными в **btrfs**
+```bash
+mkfs.btrfs /dev/sda4
+```
+
+## Монтирование разделов
+
+монтирование раздела с данными
+```bash
+mount /dev/sda4 /mnt
+```
+создание папки для загрузчика
+```bash
+mkdir /mnt/boot
+mkdir /mnt/boot/EFI
+```
+монтирование раздела с будущем загрузчиком
+```bash
+mount /dev/sda2 /mnt/boot/EFI
+```
+
+## Установка системы с помощью **pacstrap**
+
+Установка нужного набора пакетов
+
+**linux-zen** - самое свежее и быстрое ядро, более стабильное **linux**, и самое стабильное **linux-lts**, headers дописываются
+
+соответственно выбранному ядру, те для lts будет **linux-lts-headers**
+
+**linux-firmware** - набор драйверов-прошивок
+
+**dosfstools btrfs-progs** - набор утилит для ФС
+
+**amd-ucode** - микрокод для процессоров AMD, для intel - **intel-ucode iucode-tool**
+
+**nano** - простой консольный редактор, для редактирования конфигов
+```bash
+pacstrap -i /mnt base base-devel linux-zen linux-zen-headers linux-firmware dosfstools btrfs-progs amd-ucode nano
+```
