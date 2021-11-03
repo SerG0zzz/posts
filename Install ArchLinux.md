@@ -275,3 +275,77 @@ sudo pacman -S network-manager-applet
 ```bash
 reboot
 ```
+
+## Установка графической оболочки
+
+для KDE
+```bash
+sudo pacman -S xorg xorg-server plasma plasma-wayland-session kde-applications sddm sddm-kcm packagekit-qt5
+```
+Включаем дисплей менеджер
+```bash
+systemctl enable sddm
+```
+
+для Gnome
+```bash
+pacman -S  xorg xorg-server gnome gnome-extra gdm
+```
+Включаем дисплей менеджер
+```bash
+systemctl enable gdm
+```
+
+для XFCE
+```bash
+pacman -S xorg xorg-server xfce4 xfce4-goodies lightdm lightdm-gtk-greeter
+```
+Включает дисплей менеджер
+```bash
+systemctl enable lightdm
+```
+
+для Сinnamon
+```bash
+pacman -S xorg xorg-server cinnamon
+```
+Включаем дисплей менеджер
+```bash
+systemctl enable gdm
+```
+
+для Deepin
+```bash
+pacman -S xorg xorg-server deepin deepin-extra lightdm lightdm-deepin-greeter
+```
+Включаем дисплей менеджер
+```bash
+systemctl enable lightdm
+```
+
+для Enlightenment
+```bash
+pacman -S xorg xorg-server enlightenment lightdm lightdm-gtk-greeter
+```
+Включаем дисплей менеджер
+```bash
+systemctl enable lightdm
+```
+
+для Mate
+```bash
+pacman -S xorg xorg-server mate mate-extra mate-panel mate-session-manager
+```
+Включаем дисплей менеджер
+```bash
+systemctl enable mdm
+```
+
+для LXDE
+```bash
+pacman -S xorg xorg-server lxde-common  lxsession openbox lxde lxdm
+```
+Включаем дисплей менеджер
+```bash
+systemctl enable lxdm
+```
