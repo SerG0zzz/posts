@@ -178,3 +178,34 @@ nano /etc/hosts
 ::		localhost
 127.0.0.1	<имя компьтера>.localdomain	<имя компьтера>
 ```
+создание образа оперативной памяти для ядра, можно если одно ядро и так **mkinitcpio -P**
+```bash
+mkinitcpio -p linux-zen
+```
+установка пароля для root
+```bash
+passwd
+```
+## Скачивание загрузчика и его настройка
+
+за одно и сетевые утилиты
+```bash
+pacman -Syu
+pacman -S grub efibootmgr dhcpcd dhclient networkmanager
+```
+Установка загрузчика
+```bash
+grub-install /edv/sda
+```
+если не получилось, для EFI BIOS:
+```bash
+grub-install --boot-directory=/boot/EFI
+```
+конфигурирование загрузчика
+```bash
+grub-mkconfig -o /boot/grub/grub.cfg
+```
+и выход из chroot
+```bash
+exit
+```
