@@ -349,3 +349,8 @@ pacman -S xorg xorg-server lxde-common  lxsession openbox lxde lxdm
 ```bash
 systemctl enable lxdm
 ```
+
+после установки графической оболочки - перезагрузка
+```bash
+reboot
+```
