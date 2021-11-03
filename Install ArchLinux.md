@@ -239,3 +239,31 @@ sudo su
 systemctl enable NetworkManager
 reboot
 ```
+проверка сети
+```bash
+ping google.com
+```
+если нет проволной сети
+```bash
+nmcli d wifi connect <имя точки длступа> password xxxxxxxx
+```
+## Уставнавливаем видеодрайвера
+
+для amd
+```bash
+sudo pacman -Syu lib32-mesa vulkan-radeon lib32-vulkan-radeon vulkan-icd-loader lib32-vulkan-icd-loader
+```
+для intel
+```bash
+sudo pacman -Syu lib32-mesa vulkan-intel lib32-vulkan-intel vulkan-icd-loader lib32-vulkan-icd-loader libva-media-driver xf86-video-intel
+```
+для Nvidia
+```bash
+sudo pacman -Syu nvidia-dkms nvidia-utils lib32-nvidia-utils nvidia-settings vulkan-icd-loader lib32-vulkan-icd-loader lib32-opencl-nvidia opencl-nvidia libxnvctrl
+```
+для Nvidia+Intel
+```bash
+sudo pacman -Syu nvidia-dkms nvidia-utils lib32-nvidia-utils nvidia-settings vulkan-icd-loader lib32-vulkan-icd-loader lib32-opencl-nvidia opencl-nvidia libxnvctrl
+sudo pacman -Syu lib32-mesa vulkan-intel lib32-vulkan-intel vulkan-icd-loader lib32-vulkan-icd-loader libva-intel-driver xf86-video-intel
+```
+
