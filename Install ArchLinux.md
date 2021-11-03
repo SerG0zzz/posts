@@ -144,4 +144,9 @@ arch-chroot /mnt
 конфигурирование времени и даты
 ```bash
 ln -sf /usr/share/zoneinfo/Europe/Moscow /etc/localtime
+hwclock --systohc
+```
+русификация системы, выбрать нужные языки, путём уберания у ужных строк символа **#**
+```bash
+nano /etc/locale.gen
 ```
