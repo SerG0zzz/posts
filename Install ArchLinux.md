@@ -209,3 +209,8 @@ grub-mkconfig -o /boot/grub/grub.cfg
 ```bash
 exit
 ```
+## Размонтирование разделов и перезагрузка
+```bash
+umount -R /mnt
+reboot
+```
