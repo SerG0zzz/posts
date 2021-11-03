@@ -155,3 +155,12 @@ locale-gen
 ```bash
 nano /etc/locale.conf
 ```
+настройка консоли на родной язык
+```bash
+nano /etc/vconsole.conf
+```
+прописать в файл:
+```bash
+KEYMAP=ru
+FONT=cyr-sun16
+```
