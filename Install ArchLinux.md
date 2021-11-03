@@ -127,3 +127,21 @@ mount /dev/sda2 /mnt/boot/EFI
 ```bash
 pacstrap -i /mnt base base-devel linux-zen linux-zen-headers linux-firmware dosfstools btrfs-progs amd-ucode nano
 ```
+генерирование файла конфигурации дисков в системе
+```bash
+genfstab -U /mnt >> /mnt/etc/fstab
+```
+теперь проверка того что сгенерировалось
+```bash
+cat /mnt/etc/fstab
+```
+
+## Переход в установленную систему и её настройка
+
+```bash
+arch-chroot /mnt
+```
+конфигурирование времени и даты
+```bash
+ln -sf /usr/share/zoneinfo/Europe/Moscow /etc/localtime
+```
