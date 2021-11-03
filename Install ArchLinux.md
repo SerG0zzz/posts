@@ -175,6 +175,6 @@ nano /etc/hosts
 прописать туда:
 ```bash
 127.0.0.1	localhost
-::			localhost
+::		localhost
 127.0.0.1	<имя компьтера>.localdomain	<имя компьтера>
 ```
