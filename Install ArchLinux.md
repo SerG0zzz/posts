@@ -146,7 +146,12 @@ arch-chroot /mnt
 ln -sf /usr/share/zoneinfo/Europe/Moscow /etc/localtime
 hwclock --systohc
 ```
-русификация системы, выбрать нужные языки, путём уберания у ужных строк символа **#**
+русификация системы, выбрать нужные языки, путём уберания у нужных строк символа **#**
 ```bash
 nano /etc/locale.gen
+locale-gen
+```
+отредактировать файл, добавив параметр языка системы **LANG=ru_RU.UTF-8**
+```bash
+nano /etc/locale.conf
 ```
